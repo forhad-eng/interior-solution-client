@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import logo from '../assets/Group 33069.png'
+import logo from '../../assets/Group 33069.png'
 
 const Header = () => {
     const navigateItems = (
         <>
             <li>
-                <Link href="/Home">
+                <Link href="/">
                     <a>Home</a>
                 </Link>
             </li>

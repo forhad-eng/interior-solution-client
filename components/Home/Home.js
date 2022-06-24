@@ -1,11 +1,13 @@
 import LandingUi from './LandingUi'
 import Projects from './Projects'
+import Services from './Services'
 
 const Home = () => {
     return (
         <>
             <LandingUi />
-            <Projects/>
+            <Projects />
+            <Services />
         </>
     )
 }
