@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import toast from 'react-hot-toast'
 
 const Contact = () => {
     const [chars, setChars] = useState(100)
@@ -7,9 +8,14 @@ const Contact = () => {
         register,
         handleSubmit,
         watch,
-        formState: { errors }
+        formState: { errors },
+        reset
     } = useForm()
-    const onSubmit = data => console.log(data)
+
+    const onSubmit = data => {
+        reset()
+        toast.success('Message sent!')
+    }
 
     useEffect(() => {
         setChars(100 - watch('message').length)
@@ -70,7 +76,7 @@ const Contact = () => {
                         <input
                             {...register('phone', {
                                 required: { value: true, message: 'Phone is required' },
-                                minLength: { value: 11, message: 'Phone number requires 9 digit' },
+                                minLength: { value: 11, message: 'Phone number requires 11 digit' },
                                 pattern: { value: /[0-9]/, message: 'Invalid Phone number' }
                             })}
                             type="text"
