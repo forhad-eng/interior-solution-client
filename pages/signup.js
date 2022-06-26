@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import googleIcon from '../assets/Icon/Group 573.png'
-import loginPic from '../assets/Image/login.jpg'
+import signupPic from '../assets/Image/signup.jpg'
 import Meta from '../components/Shared/Meta'
 
-const Login = () => {
+const Signup = () => {
     return (
         <>
             <Meta title="Interior Solution - Login" />
@@ -12,7 +12,14 @@ const Login = () => {
                 <div className="hero-content flex-col lg:flex-row-reverse border-2 rounded-2xl">
                     <div className="card flex-shrink-0 w-full max-w-sm">
                         <div className="card-body pb-4">
-                            <h2 className="text-2xl font-bold text-secondary mb-4">Login</h2>
+                            <h2 className="text-2xl font-bold text-secondary mb-4">Sign Up</h2>
+                            <div className="form-control">
+                                <input
+                                    type="text"
+                                    placeholder="Name"
+                                    className="border-b-2 outline-none pb-2 text-sm"
+                                />
+                            </div>
                             <div className="form-control">
                                 <input
                                     type="email"
@@ -26,18 +33,20 @@ const Login = () => {
                                     placeholder="Password"
                                     className="border-b-2 outline-none pb-2 text-sm"
                                 />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">
-                                        Forgot password?
-                                    </a>
-                                </label>
                             </div>
                             <div className="form-control">
-                                <button className="btn btn-primary text-white">Login</button>
+                                <input
+                                    type="c-password"
+                                    placeholder="Confirm Password"
+                                    className="border-b-2 outline-none pb-2 text-sm"
+                                />
+                            </div>
+                            <div className="form-control mt-4">
+                                <button className="btn btn-primary text-white">Sign Up</button>
                             </div>
                             <label className="label py-0">
-                                <Link href="/signup">
-                                    <a className="label-text-alt link text-blue-600">New user? Create an account</a>
+                                <Link href="/login">
+                                    <a className="label-text-alt link text-blue-600">Already have an account? Login</a>
                                 </Link>
                             </label>
                         </div>
@@ -49,7 +58,7 @@ const Login = () => {
                         </button>
                     </div>
                     <div className="text-center lg:text-left lg:w-[500px]">
-                        <Image src={loginPic} alt="Login" width="350" height="300" />
+                        <Image src={signupPic} alt="Signup" width="350" height="300" />
                     </div>
                 </div>
             </div>
@@ -57,4 +66,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Signup
