@@ -27,7 +27,7 @@ const Services = () => {
     ]
 
     return (
-        <div className="text-center max-w-7xl mx-auto px-6 lg:px-10 my-20">
+        <div id="services" className="text-center max-w-7xl mx-auto px-6 lg:px-10 my-20">
             <p className="font-bold">Services</p>
             <h2 className="text-3xl font-extrabold text-secondary tracking-wide">
                 We're an agency tailored to all <br /> clients' needs that always delivers

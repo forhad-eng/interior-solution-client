@@ -1,8 +1,13 @@
+import { signOut } from 'firebase/auth'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useAuthState } from 'react-firebase-hooks/auth'
 import logo from '../../assets/Group 33069.png'
+import { auth } from '../../firebase.config'
 
 const Header = () => {
+    const [user] = useAuthState(auth)
+
     const navigateItems = (
         <>
             <li>
@@ -72,9 +77,15 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link href="/login">
-                        <a className="btn btn-primary text-white lg:w-[96px] lg:h-[20px]">Login</a>
-                    </Link>
+                    {user ? (
+                        <a onClick={() => signOut(auth)} className="btn btn-primary text-white lg:w-[96px] lg:h-[20px]">
+                            Logout
+                        </a>
+                    ) : (
+                        <Link href="/login">
+                            <a className="btn btn-primary text-white lg:w-[96px] lg:h-[20px]">Login</a>
+                        </Link>
+                    )}
                 </div>
             </div>
         </nav>

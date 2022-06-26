@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import image1 from '../../assets/Image/pierre-chatel-innocenti-AlSlE8IAjZo-unsplash 1.png'
 
 const LandingUi = () => {
@@ -21,7 +22,9 @@ const LandingUi = () => {
                         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                         quasi. In deleniti eaque aut repudiandae et a id nisi.
                     </p>
-                    <button className="btn btn-primary text-white">Book</button>
+                    <Link href="#services">
+                        <button className="btn btn-primary text-white">Book</button>
+                    </Link>
                 </div>
             </div>
         </div>
