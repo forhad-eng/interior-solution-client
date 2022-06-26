@@ -34,7 +34,7 @@ const Header = () => {
     )
 
     return (
-        <nav className="bg-[#f6f6f6] pt-2">
+        <nav className="bg-[#f6f6f6] py-2">
             <div className="navbar max-w-7xl mx-auto px-6 lg:px-10">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -72,7 +72,9 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn btn-primary text-white lg:w-[96px] lg:h-[20px]">Login</a>
+                    <Link href="/login">
+                        <a className="btn btn-primary text-white lg:w-[96px] lg:h-[20px]">Login</a>
+                    </Link>
                 </div>
             </div>
         </nav>

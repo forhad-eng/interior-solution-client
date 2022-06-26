@@ -23,7 +23,7 @@ const Testimonials = () => {
                     clearTimeout(resetTimeout)
                     if (index + 1 === 3) {
                         resetTimeout = setTimeout(() => {
-                            carouselRef.current.goTo(0)
+                            carouselRef?.current?.goTo(0)
                         }, 3000)
                     }
                 }}
