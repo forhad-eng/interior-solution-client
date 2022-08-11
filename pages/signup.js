@@ -22,7 +22,7 @@ const Signup = () => {
         reset
     } = useForm()
 
-    if (eUser) {
+    if (eUser || gUser) {
         router.replace('/')
     }
 
@@ -43,7 +43,7 @@ const Signup = () => {
 
     return (
         <>
-            <Meta title="Interior Solution - Login" />
+            <Meta title="Interior Solution - Signup" />
             <div className="hero mt-10 lg:mt-20 mb-24 px-4 lg:px-0">
                 <div className="hero-content flex-col lg:flex-row-reverse border-2 rounded-2xl">
                     <div className="card flex-shrink-0 w-full max-w-sm">

@@ -1,12 +1,16 @@
 import { signOut } from 'firebase/auth'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import logo from '../../assets/Group 33069.png'
 import { auth } from '../../firebase.config'
 
 const Header = () => {
     const [user] = useAuthState(auth)
+    const router = useRouter()
+    const asPath = router.asPath
+    const { id } = router.query
 
     const navigateItems = (
         <>
@@ -31,15 +35,15 @@ const Header = () => {
                 </Link>
             </li>
             <li>
-                <Link href="/admin">
-                    <a>Admin</a>
+                <Link href="/dashboard">
+                    <a>Dashboard</a>
                 </Link>
             </li>
         </>
     )
 
     return (
-        <nav className="bg-[#f6f6f6] py-2">
+        <nav className={`bg-[#f6f6f6] py-2 ${asPath === `/book/${id}` && 'bg-[#ffffff]'} ${asPath === `/dashboard` && 'bg-[#ffffff]'}`}>
             <div className="navbar max-w-7xl mx-auto px-6 lg:px-10">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -68,7 +72,7 @@ const Header = () => {
                     </div>
 
                     <Link href="/">
-                        <Image src={logo} alt="Logo" width="125" height="41" />
+                        <Image src={logo} alt="Logo" width="125" height="41" className="cursor-pointer" />
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
