@@ -4,11 +4,12 @@ import Projects from './Projects'
 import Services from './Services'
 import Testimonials from './Testimonials'
 
-const Home = () => {
+const Home = ({projects}) => {
+
     return (
         <>
             <LandingUi />
-            <Projects />
+            <Projects projects={projects} />
             <Services />
             <Testimonials />
             <Contact />
